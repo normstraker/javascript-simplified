@@ -45,3 +45,13 @@ let hiYa = () => {
   console.log("hi");
 };
 hiYa();
+
+// why arrow functions?
+function func(x, callback) {
+  callback(x);
+}
+// func(10, function (variable) {
+//   console.log(variable);
+// });
+// to this
+func(10, variable => console.log(variable))
