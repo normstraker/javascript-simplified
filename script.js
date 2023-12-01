@@ -1,35 +1,47 @@
-// function sumCallback(a, b, callback) {
-//   callback(a + b);
+// regular function
+// function sum(a, b, c) {
+//   return a + b - c;
 // }
+// console.log(sum(5, 6, 1));
 
-// function handleSum(sum) {
-//   console.log(sum);
+// let dum = (a, b, c) => {
+//   return a - b + c;
+// };
+// console.log(dum(1, 10, 19));
+
+// let aName = x => {
+//   return x;
+// };
+// console.log(aName("Norman Lewis Straker"));
+
+// if setup in settings, () are removed around single parameter with arrow function (ie x)
+let aName = x => {
+  console.log(x);
+};
+aName("Norm");
+
+// with arrow function if code on one line you can leave off the {} and 'return' and js will return a + b value
+let aSum = (a, b) => a + b;
+console.log(aSum(6, 9));
+
+// same as
+
+// let aSum = (a, b) => {
+//   return a + b;
+// };
+// console.log(aSum(6, 9));
+
+let printHi = name => "Hi " + name;
+console.log(printHi("Norm"));
+
+// all variables and function names must be unique
+// function Hi() {
+//   console.log("hi");
 // }
+// Hi();
 
-// sumCallback(2, 3, handleSum);
-
-// create a new function that takes two parameters;
-// 1. name
-// 2. callback that prints out what we pass to it (printVariable)
-
-function w(x, callback) {
-  callback("Hello " + x);
-}
-
-// function aa(z) {
-//   console.log("Hello " + z);
-// }
-// function bb(v) {
-//   console.log("What's up " + v + "?");
-// }
-// w("Norm", aa);
-// w("Norman", bb);
-
-// or
-
-w("Norm", function (z) {
-  console.log(z);
-});
-
-// passing a function to a function is just making the function a fancy variable
-// when you pass a function as a variable don't use the ()
+// how to write an arrow function with empty parameter
+let hiYa = () => {
+  console.log("hi");
+};
+hiYa();
