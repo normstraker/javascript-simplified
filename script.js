@@ -1,18 +1,13 @@
-function doStuff(a, b, name) {
-  print(sum(a, b));
-  print(sayHi(name));
-}
+// Hoisting - arrow functions will not be hoisted (moved to top of code)
 
-function print(variable) {
-  console.log(variable);
-}
+// let sum = (a, b) => {
+//   return a + b;
+// };
+
+console.log(sum(4, 5));
+
+// Hoisting - regular functions will be hoisted (moved to top of code)
 
 function sum(a, b) {
   return a + b;
 }
-
-function sayHi(name) {
-  return "Hi " + name;
-}
-
-doStuff(1, 2, "Norm");
