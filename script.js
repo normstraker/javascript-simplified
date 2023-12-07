@@ -1,27 +1,21 @@
-// Everytime you work inside a {} you have scope. So every function has it's own scope.
-// Everything in your code is Global Scope.
-// Everything in your function is Local Scope.
+// let a = 1;
 
-// function sayHi(name) {
-//   let result = "Hi " + name;
-//   console.log(result);
+// function print() {
+//   console.log(a);
 // }
-// let result = "Norm";
-// sayHi(result);
 
-// let name = "Norm";
-// sayHi(name);
+// a = 2;
+// print();
 
-// Example of layered scope, inner most has access to outer scope but outer does not have access to inner scope
-{
+function print(variable) {
   let c = 3;
-  {
-    let a = 1;
-    {
-      let b = 2;
-      console.log(a);
-      console.log(b);
-      console.log(c);
-    }
-  }
+  return function func(variable2) {
+    console.log(variable); //1
+    console.log(variable2); //2
+    console.log(c); //3
+  };
 }
+let a = print(1);
+a(2); //print(1) func(2)
+
+// https://chat.openai.com/g/g-igUACg05d-web-design-guru/c/1a10e6cb-1076-45e5-becd-d2e1e6b7b59e
