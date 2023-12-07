@@ -1,13 +1,27 @@
-// Hoisting - arrow functions will not be hoisted (moved to top of code)
+// Everytime you work inside a {} you have scope. So every function has it's own scope.
+// Everything in your code is Global Scope.
+// Everything in your function is Local Scope.
 
-// let sum = (a, b) => {
-//   return a + b;
-// };
+// function sayHi(name) {
+//   let result = "Hi " + name;
+//   console.log(result);
+// }
+// let result = "Norm";
+// sayHi(result);
 
-console.log(sum(4, 5));
+// let name = "Norm";
+// sayHi(name);
 
-// Hoisting - regular functions will be hoisted (moved to top of code)
-
-function sum(a, b) {
-  return a + b;
+// Example of layered scope, inner most has access to outer scope but outer does not have access to inner scope
+{
+  let c = 3;
+  {
+    let a = 1;
+    {
+      let b = 2;
+      console.log(a);
+      console.log(b);
+      console.log(c);
+    }
+  }
 }
