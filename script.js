@@ -1,6 +1,16 @@
-// Variables
-// let variable lets you know it can change
-let a = 1
+// Variables - var (try not to use)
+// var is available outside of its scope (everywhere - breaks all scoping rules - can get messy)
+// var a = 1;
 
-// const variable value cannot be changed (lets you know this was meant not to change)
-const b = 2
+// {
+//   let b = 2;
+//   console.log(a);
+// }
+// console.log(b);
+
+// ====
+// var 'hoists' the variable to the top and sets it as undefined
+// var c = undefined
+console.log(c);
+var c = 1;
+console.log(c);
