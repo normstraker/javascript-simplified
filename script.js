@@ -1,16 +1,43 @@
-// Variables - var (try not to use)
-// var is available outside of its scope (everywhere - breaks all scoping rules - can get messy)
-// var a = 1;
+// Type Coercion (converting one type to another)
 
-// {
-//   let b = 2;
-//   console.log(a);
-// }
-// console.log(b);
+// number
+// string
 
-// ====
-// var 'hoists' the variable to the top and sets it as undefined
-// var c = undefined
-console.log(c);
-var c = 1;
-console.log(c);
+let a = "1";
+let b = "2.3";
+
+console.log(a);
+console.log(typeof a);
+
+// convert to number
+console.log(parseInt(a));
+console.log(typeof parseInt(a));
+
+console.log(parseInt(b)); // removes the decimal
+console.log(parseFloat(b)); // keeps the decimal
+console.log(typeof parseFloat(b));
+
+// convert back to string
+console.log(a.toString());
+console.log(typeof a.toString());
+console.log(b.toString());
+console.log(typeof b.toString());
+
+//=================
+
+// implicit type coercion (the computer is implicitly taking care of the conversion for you)
+let c = 4;
+let d = "Hello ";
+
+// when you have a number with a string, the ADDED number is always converted to a string
+console.log(d + c); // Hello 4
+console.log(d - c); // NaN
+
+let e = 1;
+let f = "3";
+console.log(e + f); // 13
+console.log(typeof (e + f)); // string
+console.log(e + parseInt(f)); // 4
+console.log(typeof (e + parseInt(f))); // number
+
+// always try to make your types the same when working in JS
