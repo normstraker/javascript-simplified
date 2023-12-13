@@ -1,40 +1,53 @@
-// Arrays
-// remember that the index starts counting at 0
+// Objects - a collection of information (properties) related in some way
 
-const a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log(a); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-console.log(a[0]); // 1
-// add an element to the end of the list
-a.push(11);
-a.push("hi");
-a.push(["hi", "bye"]); // add array to an array
-console.log(a);
+let name = "Norm";
+const age = 57;
+const favoriteNum = 127;
 
-// nested array
-const b = [
-  ["hi", "bye"],
-  [1, 2],
-];
-console.log(b);
-console.log(b[1][0]); // 1
-console.log(b[0][0], b[1][1]); // hi 2
-console.log(b[0][0], a[9]); // hi 10
+// To create an object you use {}
+let person = {
+  name: "Norm",
+  age: 57,
+  favoriteNum: 127,
+  // you can add a function
+  sayHi() {
+    console.log("Hi");
+  },
+  property: "Value",
+};
+// let person = { name, age, favoriteNum, sayHi };
+console.log(person);
+console.log(person.sayHi);
+person.sayHi();
 
-// exercise - create an array with the first 5 letters of the alphabet and print out the middle letter
-const alpha = ["a", "b", "c", "d", "e"];
-console.log(alpha[2]); // c
+// Exercise
+// Create an object with the properties:
+// 1. Make
+// 2. Model
+// 3. isUsed
+// function that logs "Vrooom!"
 
-// exercise, print out 4, 8, 11
-const c = [
-  [1, 2, 3, 4, 5], // 4 is index 0, 3
-  [6, 7, 8, 9, 10], // 8 is index 1, 2
-  [11, 12, 13, 14, 15], // 11 is index 2, 0
-];
-console.log(c[0][3], c[1][2], c[2][0]);
+let car = {
+  Make: "Ford",
+  Model: "F150",
+  isUsed: true,
+  makeNoise() {
+    console.log("Vrooom!");
+  },
+};
+console.log(car.Make, car.Model, car.isUsed);
+car.makeNoise();
 
-// to get the length of an array
-console.log(a.length); // 13
-console.log(alpha.length); // 5
-console.log(b.length); // 2
-console.log(c.length); // 3
-console.log(c[0].length); // 5
+// Exercise
+const book = {
+  title: "How the West was Won",
+  Author: { name: "Pete Shmeet", age: 63 },
+  wives: ["Loretta", "Jamie"],
+};
+console.log(book.title, book.Author.name, book.Author.age);
+
+// you can redefine object properties and array values
+book.title = "Napolean";
+book.Author.age = 73;
+book.wives[1] = "Myrtle";
+console.log(book.title, book.Author.name, book.Author.age, book.wives[1]);
