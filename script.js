@@ -1,5 +1,5 @@
 // Array Methods
-// a Method is a function inside an Array or Object
+// a Method is a function inside an Array
 
 const a = [1, 2, 3, 4, 5];
 
@@ -55,7 +55,12 @@ const items = [
   { price: 1 },
   { price: 6 },
 ];
-const total = items.reduce((sum, price) => {
-  return (sum + price);
+const total = items.reduce((sum, item) => {
+  return sum + item.price;
 }, 0);
 console.log(total);
+
+// ==============
+// includes - returns true if included in your array
+const issTrue = a.includes(2);
+console.log(issTrue);
