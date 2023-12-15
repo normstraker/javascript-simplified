@@ -1,59 +1,61 @@
-// Reference VS Value
-// Variables are assigned values
-// Arrays and Objects are assigned references in a computer memory location
+// Array Methods
+// a Method is a function inside an Array or Object
 
-// let a = 10;
-// let b = "Hi";
-// let c = [1,2]; // eg. 0x01
-// let d = c; // eg. 0x01
-// d.push(3)
+const a = [1, 2, 3, 4, 5];
 
-// let a = 10;
-// let b = "Hi";
-// let c = [1, 2]; // eg. 0x01
-// let d = [3, 4, 5]; // eg. 0x02 (new memory)
-// d.push(6);
+// a.forEach((number, index) => {
+//   console.log(number + " " + index);
+// }); // 1, 2, 3, 4, 5
 
-let a = 10;
-let b = "Hi";
-let c = { name: "Norm" }; // eg. 0x01
-let d = c; // eg. 0x01
-d.name = "Joe";
+// we can modify the elements in our array using map
+// const newA = a.map(number => {
+//   return number * 2;
+// });
+// a is not changed
 
-console.log("a = " + a);
-console.log("b = " + b);
-console.log("c = " + JSON.stringify(c)); // prints out an object
-console.log("d = " + JSON.stringify(d));
+// filter can remove elements in our array
+const newA = a.filter(number => {
+  return number <= 2;
+});
+console.log(a);
+console.log(newA);
 
-// ========
+// find loops through our array and returns the first element in our array that equals true
+const n = a.find(number => {
+  return number > 2;
+});
 
-let aa = [1, 2]; // 0x01
-let bb = [1, 2]; // 0x02
-console.log(aa === bb); // false
+console.log(n); // 3
 
-aa.push(3);
-console.log(aa);
-console.log(bb);
+// some checks if any element in array equal true
+const isTrue = a.some(number => {
+  return number > 5;
+});
+console.log(isTrue); // false
 
-// =========
-const aaa = [1, 2]; // 0x01
-const bbb = [1, 2]; // 0x02
-aaa.push(3); // pushes to the memory, doesn't change location (const)
-// aaa = [1, 2, 3] // throws an error, redefined, not modified
-console.log(aaa);
-console.log(bbb);
+// every checks if all elements in array equal true
+const areAll = a.every(number => {
+  return number > 0;
+});
+console.log(areAll);
 
-// ==========
+// reduce - reduces your array to one single value by doing something to it
+const s = a.reduce((sum, number) => {
+  return sum + number;
+}, 0);
+console.log(s); // 15 (0+1+2+3+4+5) 0 is the default value of sum
 
-const z = [1, 2]; // 0x01
-const elementToAdd = 3; // 3
+// ==================
+// Exercise
 
-add(z, elementToAdd); // 0x01, 3
-
-console.log(z); // Array(3) [1, 2, 4]
-console.log(elementToAdd); // 3
-
-function add(array, element) {
-  element = element + 1; // 4
-  array.push(element); // [1, 2, 4]
-}
+const items = [
+  { price: 10 },
+  { price: 20 },
+  { price: 14 },
+  { price: 1 },
+  { price: 6 },
+];
+const total = items.reduce((sum, price) => {
+  return (sum + price);
+}, 0);
+console.log(total);
