@@ -1,66 +1,14 @@
-// Array Methods
-// a Method is a function inside an Array
+// String Template Literals
+let a = "Hello";
+let b = "World";
 
-const a = [1, 2, 3, 4, 5];
+console.log(`${a} ${b}`);
 
-// a.forEach((number, index) => {
-//   console.log(number + " " + index);
-// }); // 1, 2, 3, 4, 5
+// Exercise: create two variables, one for your first name and one for your last name, then combine them together with back tics.
 
-// we can modify the elements in our array using map
-// const newA = a.map(number => {
-//   return number * 2;
-// });
-// a is not changed
+let firstName = "Norm";
+let lastName = "Straker";
 
-// filter can remove elements in our array
-const newA = a.filter(number => {
-  return number <= 2;
-});
-console.log(a);
-console.log(newA);
+console.log(`${firstName} ${lastName}`); // template literal or template string
 
-// find loops through our array and returns the first element in our array that equals true
-const n = a.find(number => {
-  return number > 2;
-});
 
-console.log(n); // 3
-
-// some checks if any element in array equal true
-const isTrue = a.some(number => {
-  return number > 5;
-});
-console.log(isTrue); // false
-
-// every checks if all elements in array equal true
-const areAll = a.every(number => {
-  return number > 0;
-});
-console.log(areAll);
-
-// reduce - reduces your array to one single value by doing something to it
-const s = a.reduce((sum, number) => {
-  return sum + number;
-}, 0);
-console.log(s); // 15 (0+1+2+3+4+5) 0 is the default value of sum
-
-// ==================
-// Exercise
-
-const items = [
-  { price: 10 },
-  { price: 20 },
-  { price: 14 },
-  { price: 1 },
-  { price: 6 },
-];
-const total = items.reduce((sum, item) => {
-  return sum + item.price;
-}, 0);
-console.log(total);
-
-// ==============
-// includes - returns true if included in your array
-const issTrue = a.includes(2);
-console.log(issTrue);
